@@ -1,0 +1,33 @@
+@import '../../ui/src/style.css';
+
+:root {
+  --header-height: 65px;
+}
+
+body {
+  @apply relative bg-blue-sky pt-[var(--header-height)] z-40 min-h-screen;
+}
+
+header {
+  @apply h-[var(--header-height)];
+}
+
+.view-container {
+  @apply container mx-auto p-8 relative;
+}
+
+.header-menu-item {
+  @apply opacity-70 hover:opacity-100 text-white;
+}
+
+.header-menu-item.active {
+  @apply opacity-100;
+}
+
+.row-menu {
+  @apply absolute right-0 w-56 origin-top-right divide-y divide-gray-300 bg-white shadow-lg ring-1 ring-black/5 outline-none rounded-2xl p-2;
+}
+
+.row-menu-item {
+  @apply flex w-full items-center gap-2 rounded-xl p-2.5 hover:bg-blue-500 hover:text-white;
+}

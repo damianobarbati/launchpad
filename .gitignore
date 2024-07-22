@@ -1,0 +1,17 @@
+**/.env*
+!**/.env.sample
+dist/
+**/storybook-static/
+artifacts
+cache
+coverage
+node_modules/
+.idea/
+.vscode/
+openapi.yml
+docs.html
+stats.html
+.DS_Store
+typechain-types
+coverage.json
+metadata/

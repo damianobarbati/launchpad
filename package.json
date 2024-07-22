@@ -1,0 +1,26 @@
+{
+  "name": "launchpad",
+  "version": "1.0.0",
+  "description": "launchpad application",
+  "license": "UNLICENSED",
+  "author": "Applied Blockchain Ltd <info@appliedblockchain.com> (https://github.com/appliedblockchain)",
+  "repository": "https://dev.azure.com/launchpad/_git/Blockchain",
+  "type": "module",
+  "packageManager": "pnpm@9.4.0",
+  "engines": {
+    "node": ">=22.1",
+    "pnpm": ">=9.4"
+  },
+  "scripts": {
+    "lint": "npx @biomejs/biome lint --write",
+    "tsc": "tsc --diagnostics",
+    "env:up": "docker-compose up -d --wait --quiet-pull --remove-orphans",
+    "env:down": "docker-compose down --volumes --remove-orphans"
+  },
+  "dependencies": {
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3"
+  }
+}

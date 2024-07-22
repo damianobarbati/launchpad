@@ -1,0 +1,42 @@
+{
+  "directoryListing": false,
+  "headers": [
+    {
+      "source" : "*.html",
+      "headers" : [{
+        "key" : "Cache-Control",
+        "value" : "no-store"
+      }]
+    },
+    {
+      "source" : "**/*.@(js|json|css|map|png|jpg|jpeg|gif|svg|ico|txt|woff|woff2)",
+      "headers" : [{
+        "key" : "Cache-Control",
+        "value" : "max-age=86400"
+      }]
+    },
+    {
+      "source" : "manifest.webmanifest",
+      "headers" : [{
+        "key": "Content-type",
+        "value": "application/manifest+json"
+      }, {
+        "key" : "Cache-Control",
+        "value" : "no-store"
+      }]
+    },
+    {
+      "source" : "sw.js",
+      "headers" : [{
+        "key" : "Cache-Control",
+        "value" : "no-store"
+      }]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/**/**",
+      "destination": "/index.html"
+    }
+  ]
+}

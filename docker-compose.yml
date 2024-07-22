@@ -1,0 +1,32 @@
+services:
+  db:
+    container_name: db
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_HOST=${DATABASE_HOST?}
+      - POSTGRES_DB=${DATABASE_NAME?}
+      - POSTGRES_USER=${DATABASE_USER?}
+      - POSTGRES_PASSWORD=${DATABASE_PASS?}
+    command: '-c log_statement=all -c log_min_duration_statement=0'
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql
+
+  cache:
+    container_name: cache
+    image: redis/redis-stack:7.2.0-v0
+    restart: always
+    environment:
+      - REDIS_ARGS=--save 20 1 --loglevel warning --requirepass ${CACHE_PASS?}
+    ports:
+      - '6379:6379'
+    volumes:
+      - cache:/data
+
+volumes:
+  cache:
+    driver: local
+  db:
+    driver: local

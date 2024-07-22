@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("@fontsource/montserrat/files/montserrat-latin-400-normal.woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("@fontsource/montserrat/files/montserrat-latin-600-normal.woff2");
+  font-weight: bold;
+}
+
+html, body {
+  font-family: Montserrat;
+  @apply text-grey-body;
+}
+
+.paper {
+  @apply relative shadow-sm hover:shadow-lg bg-white p-4 transition-all duration-150 rounded-xl;
+}
+
+.anchor {
+  @apply underline text-blue-600 hover:text-blue-800 cursor-pointer outline-0;
+}
+
+.anchor:not(.anchor-novisit) {
+  @apply visited:text-purple;
+}
+
+.button-link {
+  @apply text-blue-dark text-[16px];
+}
+
+/* react-multi-select-component styling */
+.rmsc .multi-select {
+  @apply border-0;
+}
+
+.rmsc .dropdown-heading {
+  @apply min-w-40 !w-auto !h-[42px] !rounded-full border border-grey-border py-2 !bg-inherit focus:ring-1 focus:border-0 focus:ring-offset-0;
+}
+
+.rmsc .dropdown-container {
+  @apply !w-auto !rounded-full !border-0 py-2 !pt-0 !pb-0 mt-1 !bg-inherit focus:ring-0;
+}
+
+.rmsc .dropdown-content {
+  @apply !z-50;
+}
+
+.rmsc .clear-selected-button svg {
+  @apply size-6 fill-grey;
+}
+
+/** remove browser default buttons from search input */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+/** remove browser default outline from controls */
+@layer {
+  input,
+  textarea,
+  select {
+    @apply outline-none focus:ring-1 focus:border-0 focus:ring-offset-0 !important;
+  }
+}
+
+/* Typography */
+
+/* H1 */
+h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  letter-spacing: 1px;
+}
+
+/* H2 */
+h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 125%;
+  letter-spacing: 0.8px;
+}
+
+/* H3 */
+h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0.6px;
+}
+
+/* H4 */
+h4 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 125%;
+  letter-spacing: 0.4px;
+}
+
+/* H5 */
+h5 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.2px;
+}
+
+/* H6 */
+h6 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+/* subtitle1 */
+.subtitle1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+/* subtitle2 */
+.subtitle2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+/* body1 */
+.body1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+/* body2 */
+.body2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+/* body3 */
+.body3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+/* body4 */
+.body4 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+/* button */
+.button {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+/* caption */
+.caption {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 110%;
+}
+
+/* caption2 */
+.caption2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+}
+
+/* kpi-value */
+.kpi-value {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 80px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+:not(button).green,
+:not(button).green-light {
+  @apply text-green;
+}
+
+:not(button).orange,
+:not(button).orange-light {
+  @apply text-yellow-dark;
+}
+
+:not(button).red,
+:not(button).red-light {
+  @apply text-red;
+}
+
+:not(button).blue,
+:not(button).blue-light {
+  @apply text-blue;
+}
+
+:not(button).grey,
+:not(button).grey-light {
+  @apply text-grey;
+}
+
+button.green-outlined,
+.button.green-outlined {
+  @apply border border-green bg-transparent text-green fill-green transition duration-200 ease-in-out hover:enabled:bg-green hover:enabled:text-white;
+}
+button.orange-outlined,
+.button.orange-outlined {
+  @apply border border-yellow-dark bg-transparent text-yellow-dark fill-yellow-dark transition duration-200 ease-in-out hover:enabled:bg-yellow-dark hover:enabled:text-white;
+}
+button.red-outlined,
+.button.red-outlined {
+  @apply border border-red-dark bg-transparent text-red-dark fill-red-dark transition duration-200 ease-in-out hover:enabled:bg-red-dark hover:enabled:text-white;
+}
+button.blue-outlined,
+.button.blue-outlined {
+  @apply border border-blue bg-transparent text-blue fill-blue transition duration-200 ease-in-out hover:enabled:bg-blue hover:enabled:text-white;
+}
+button.grey-outlined,
+.button.grey-outlined {
+  @apply border border-grey bg-transparent text-grey fill-grey transition duration-200 ease-in-out hover:enabled:bg-grey hover:enabled:text-white;
+}
+
+button.green,
+.button.green {
+  @apply bg-green text-white fill-white;
+}
+button.orange,
+.button.orange {
+  @apply bg-yellow-dark text-white fill-white;
+}
+button.red,
+.button.red {
+  @apply bg-red-dark text-white fill-white;
+}
+button.blue,
+.button.blue {
+  @apply bg-blue text-white fill-white;
+}
+button.grey,
+.button.grey {
+  @apply bg-grey text-white fill-white;
+}
+
+span.green {
+  @apply border border-green-dark bg-green-light text-green-dark fill-green-dark;
+}
+span.orange {
+  @apply border border-yellow-dark bg-orange-100 text-orange-500 fill-orange-500;
+}
+span.red {
+  @apply border border-red-dark bg-red-light text-red-dark fill-red-dark;
+}
+span.blue {
+  @apply border border-blue bg-blue-light text-blue fill-blue;
+}
+span.grey {
+  @apply border border-grey bg-gray-100 text-grey fill-grey;
+}
+
+select {
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 24px;
+  background-color: inherit;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' viewBox='0 0 16 16'%3e%3cg fill='%23373A3699'%3e%3cpath d='m4.464 6.05-.707.707L8 11l4.243-4.243-.707-.707L8 9.586z'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+.tag-alerts {
+  @apply !rounded-full !border-0 !px-4 !py-2 font-bold;
+}
+
+.body-portal {
+  @apply absolute z-[99];
+}

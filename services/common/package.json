@@ -1,0 +1,10 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@9.4.0",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dayjs": "^1.11.10"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "types",
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "pnpm@9.4.0",
+  "dependencies": {
+    "@types/web-push": "^3.6.3"
+  }
+}
